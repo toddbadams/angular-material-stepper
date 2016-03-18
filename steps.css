@@ -1,0 +1,77 @@
+﻿.steps {
+  margin: 0;
+}
+.steps .step {
+  height: 64px;
+  margin: 0;
+  padding: 0;
+}
+.steps .step .step-row {
+  height: 24px;
+}
+.steps .step .step-icon {
+  height: 14px;
+  width: 14px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+.steps .step .step-circle {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 12px;
+  font-size: 12px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.38);
+  color: #ffffff;
+}
+.steps .step .step-title {
+  text-align: left;
+  margin: 0;
+  margin-left: 5px;
+  padding-left: 10px;
+  height: 24px;
+  text-transform: none;
+  font-weight: normal;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.38);
+}
+.steps .step .step-line {
+  border-left: 1px solid rgba(0, 0, 0, 0.38);
+  height: 24px;
+  margin: 4px 12px 4px 12px;
+}
+.steps .step.active .step-circle,
+.steps .step.active.completed .step-circle,
+.steps .step.active .step-line,
+.steps .step.active.completed .step-line,
+.steps .step.active .step-icon,
+.steps .step.active.completed .step-icon {
+  background-color: #3f51b5;
+  color: #ffffff;
+}
+.steps .step.active .step-title,
+.steps .step.active.completed .step-title {
+  color: rgba(0, 0, 0, 0.87);
+}
+.steps .step.completed .step-circle,
+.steps .step.completed .step-line,
+.steps .step.completed .step-icon {
+  background-color: #79bd27;
+  color: #ffffff;
+}
+.steps .step.disabled .step-circle,
+.steps .step.disabled .step-line,
+.steps .step.disabled .step-icon {
+  background-color: #dadada;
+  color: #ffffff;
+}
+.steps .step.active,
+.steps .step.active.completed {
+  -webkit-transition: color 0.7s ease-in;
+  -moz-transition: color 0.7s ease-in;
+  -ms-transition: color 0.7s ease-in;
+  -o-transition: color 0.7s ease-in;
+  transition: color 0.7s ease-in;
+}
+/*# sourceMappingURL=steps.css.map */

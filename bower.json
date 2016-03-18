@@ -1,0 +1,17 @@
+{
+  "name": "Angluar Material Stepper",
+  "version": "0.1.0",
+  "devDependencies": {
+    "angular-mocks": "^1.5.1",
+    "mocha": "^2.4.5",
+    "chai": "^3.4.2",
+    "sinon": "http://sinonjs.org/releases/sinon-1.17.3.js",
+    "sinon-chai": "https://raw.githubusercontent.com/domenic/sinon-chai/master/lib/sinon-chai.js",
+    "simple-test": "http://gitlab.orwellg.com/_PEBP/JsUnitTest.git",
+    "chance": "^1.0.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.1",
+    "angular-material": "^1.0.6"
+  }
+}

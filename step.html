@@ -1,0 +1,9 @@
+﻿<div class="step" layout="column" ng-class="{'active': $ctrl.isActive(), 'disabled': $ctrl.disabled, 'completed': $ctrl.completed}">
+    <div layout="row" class="step-row">
+        <div flex="none" class="step-circle"><md-icon ng-show="$ctrl.completed" flex="none" class="step-icon" md-svg-src="complete"></md-icon><span ng-hide="$ctrl.completed">{{$ctrl.number}}</span></div>
+        <md-button flex="auto" class="step-title" ng-click="$ctrl.select()" ng-disabled="$ctrl.disabled"><ng-transclude></ng-transclude></md-button>
+    </div>
+    <div layout="row" ng-if="!$ctrl.last">
+        <div class="step-line"></div>
+    </div>
+</div>

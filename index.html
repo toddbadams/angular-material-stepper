@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+    <title>Angular Material Stepper</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="/steps.css">
+    <base href="/">
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body ng-controller="demoCtrl as vm" layout="column" layout-padding>
+
+    <h1>Stepper Demo</h1>
+    <steps model="vm.selectedStep" component-id="mystepsId">
+        <step ng-repeat="step in vm.steps" component-id="{{step.id}}" completed="step.completed" disabled="step.disabled"><span>{{step.name}}</span></step>
+    </steps>
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.js"></script>
+    <script src="/steps.mdl.js"></script>
+    <script>
+        (function () {
+            angular.module('demo', ['ngMaterial', 'steps'])
+                .controller('demoCtrl', demoCtrl);
+
+            demoCtrl.$inject = ['stepsService'];
+            function demoCtrl(stepsService) {
+                this.steps = [
+                    {
+                        completed: true,
+                        id: 'step1',
+                        name: 'A completed step',
+                        disabled: false
+                    },
+                    {
+                        completed: true,
+                        id: 'step2',
+                        name: 'An active and completed step',
+                        disabled: false
+                    },
+                    {
+                        completed: false,
+                        id: 'step3',
+                        name: 'An incomplete and non-disabled step',
+                        disabled: false
+                    },
+                    {
+                        completed: false,
+                        id: 'step4',
+                        name: 'An incomplete and disabled step',
+                        disabled: true
+                    },
+                    {
+                        completed: true,
+                        id: 'step5',
+                        name: 'A completed and disabled step',
+                        disabled: true
+                    }
+                ];
+                this.selectedStep = this.steps[1].id;
+                stepsService.setActiveStep('mystepsId', this.selectedStep);
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+﻿
+@active: #3F51B5;
+@active-foreground: #FFF;
+@active-title: rgba(0,0,0,.87);
+
+@inactive: rgba(0,0,0,.38);
+@inactive-foreground: #FFF;
+@inactive-title: rgba(0,0,0,.38);
+
+@completed: #79BD27;
+@completed-foreground: #FFF;
+
+@disabled: #dadada;
+@disabled-foreground: #FFF;
+
+@enabled: rgba(0,0,0,.87);
+@enabled-foreground: #FFF;
+
+@height: 24px;
+
+.steps {
+    margin: 0;
+
+    .step {
+        height: 64px;
+        margin: 0;
+        padding: 0;
+
+        .step-row {
+            height: @height;
+        }
+
+        .step-icon {
+            height: 14px;
+            width: 14px;
+            padding-left: 2px;
+            padding-bottom: 2px;
+        }
+
+        .step-circle {
+            width: @height;
+            height: @height;
+            line-height: @height;
+            border-radius: 12px;
+            font-size: 12px;
+            text-align: center;
+            background-color: @inactive;
+            color: @inactive-foreground;
+        }
+
+        .step-title {
+            text-align: left;
+            margin: 0;
+            margin-left: 5px;
+            padding-left: 10px;
+            height: @height;
+            text-transform: none;
+            font-weight: normal;
+            font-size: 14px;
+            color: @inactive-title;
+        }
+
+        .step-line {
+            border-left: 1px solid @inactive;
+            height: @height;
+            margin: 4px 12px 4px 12px;
+        }
+    }
+
+    .step.active, .step.active.completed {
+
+
+        .step-circle, .step-line, .step-icon {
+            background-color: @active;
+            color: @active-foreground;
+        }
+
+        .step-title {
+            color: @active-title;
+        }
+    }
+
+    .step.completed {
+        .step-circle, .step-line, .step-icon {
+            background-color: @completed;
+            color: @completed-foreground;
+        }
+    }
+
+    .step.disabled {
+        .step-circle, .step-line, .step-icon {
+            background-color: @disabled;
+            color: @disabled-foreground;
+        }
+    }
+
+    .step.active, .step.active.completed {
+        -webkit-transition: color 0.7s ease-in;
+        -moz-transition: color 0.7s ease-in;
+        -ms-transition: color 0.7s ease-in;
+        -o-transition: color 0.7s ease-in;
+        transition: color 0.7s ease-in;
+    }
+}
